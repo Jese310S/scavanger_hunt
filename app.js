@@ -10,7 +10,7 @@ function getItems() {
         let suitableNumber = Math.floor(Math.random() * 150);
         return suitableNumber;
     }
-
+    
     // get request, url and key
     axios({
         method: 'get',
@@ -49,3 +49,15 @@ function getItems() {
 //      `).join('');
 //      spellList.innerHTML = options;
 // }
+
+//---------------------------------
+//FUNCTIONS FOR MAP API
+//--------------------------------
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8
+  });
+}
