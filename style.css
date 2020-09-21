@@ -27,6 +27,11 @@
     color: #212529;
     text-align: left;
     background-color: #fff;
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("background-image.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
   }
 
   
@@ -38,16 +43,11 @@
   p {
     margin-top: 0;
     margin-bottom: 1rem;
+    color: white;
   }
 
   header.masthead {
     padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem);
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("background-image.jpeg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-size: cover;
   }
   header.masthead h1 {
     font-size: 2.25rem;
@@ -81,10 +81,28 @@
 
  .score-container {
      background-color: white;
+     padding:20px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 20px;
  }
 
 
  /* MAP CSS */
+
+ .map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
 
  /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -99,4 +117,24 @@
     height: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  /* spellList */
+
+  .card {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+      background-color: #FFD700;
+      padding: 15px;
+      color:black;
+      font-weight: bold;
+  }
+
+  .about-section {
+    color: black;
   }
