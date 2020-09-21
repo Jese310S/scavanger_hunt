@@ -20,11 +20,16 @@ function getItems() {
         // hard coded information from API
         // console.log(response.data[0])
         // adds new spells to the spellbook
-        for (i = 0; i < num; i++) {
+        for (i = 0; i < num;) {
             mySpellbook.push(response.data[randomNumber()].spell)
             console.log(mySpellbook)
+            if (i < mySpellbook.length) {
+                i++
+            }
         }
-        
+
+        mySpellbook = mySpellbook.filter((v, i) => mySpellbook.indexOf(v) === i)
+
         // map function to add each new spell to the spellbook list
         let test = mySpellbook.map(x => `<li>${x}</li>`).join("")
 
