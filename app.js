@@ -2,6 +2,7 @@ import { hPKey } from './APIKey.js'
 
 let mySpellbook = []
 let counter = 0
+let num = 10
 
 function getItems() {
 
@@ -18,10 +19,12 @@ function getItems() {
         .then(function (response){
         // hard coded information from API
         // console.log(response.data[0])
-        let num = randomNumber()
         // adds new spells to the spellbook
-        mySpellbook.push(response.data[num].spell)
-        console.log(mySpellbook)
+        for (i = 0; i < num; i++) {
+            mySpellbook.push(response.data[randomNumber()].spell)
+            console.log(mySpellbook)
+        }
+        
         // map function to add each new spell to the spellbook list
         let test = mySpellbook.map(x => `<li>${x}</li>`).join("")
 
