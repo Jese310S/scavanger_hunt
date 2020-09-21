@@ -80,3 +80,10 @@
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
   }
+
+ /* GAME Page Styling */
+
+
+ .score-container {
+     background-color: white;
+ }
