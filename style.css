@@ -29,11 +29,6 @@
     background-color: #fff;
   }
 
-  hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-  }
   
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
@@ -87,3 +82,21 @@
  .score-container {
      background-color: white;
  }
+
+
+ /* MAP CSS */
+
+ /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }

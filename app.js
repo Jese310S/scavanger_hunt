@@ -1,4 +1,6 @@
-import { hPKey } from './app.js'
+// import { hPKey } from './API_KEY.js'
+// const { hPKey} = require ('./API_KEY.js')
+// console.log(hPKey)
 
 let mySpellbook = []
 let counter = 0
@@ -9,7 +11,7 @@ function getItems() {
         let suitableNumber = Math.floor(Math.random() * 150);
         return suitableNumber;
     }
-
+    const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
     // get request, url and key
     axios({
         method: 'get',

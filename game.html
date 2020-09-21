@@ -17,10 +17,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="style.css" rel="stylesheet" />
         <script src="./app.js"></script>
-        <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjWYTdkEXUmKuyNt2J9tMY8lI6uLQLQFM&callback=initMap&libraries=&v=weekly"
-        defer
-      ></script>
+   
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     </head>
     <body id="page-top">
@@ -41,6 +38,7 @@
         <!-- Masthead-->
         
         <header class="masthead">
+            <!-- SpellList -->
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                   <h5 class="card-title">Spells to Find</h5>
@@ -60,12 +58,15 @@
                   </ul>
                 </div>
               </div>
+
+              <!-- Title -->
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end">
                         <h1 class="text-uppercase text-white font-weight-bold">Scavenger Hunt</h1>
                         <hr class="divider my-4" />
                     </div>
+
                     <!-- score info container -->
                     <div class="container score-container">
                         <div class="row">
@@ -79,14 +80,8 @@
                     </div>
 
                     <!-- map container -->
-                    <div class="container jumbotron">
-                        <div class="row justify-content-center">
-                            <div id="map"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <div id="map" class="container jumbotron"></div>
+
         </header>
 
 
@@ -101,6 +96,10 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjWYTdkEXUmKuyNt2J9tMY8lI6uLQLQFM&callback=initMap&libraries=&v=weekly"
+        defer
+      ></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
