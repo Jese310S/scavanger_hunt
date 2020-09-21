@@ -17,6 +17,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="style.css" rel="stylesheet" />
         <script src="./app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
    
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     </head>
@@ -41,21 +42,10 @@
             <!-- SpellList -->
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                  <h5 class="card-title">Spells to Find</h5>
-                  <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      spell 1
-                      <span class="badge badge-primary badge-pill">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      spell 2
-                      <span class="badge badge-primary badge-pill">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      spell 3
-                      <span class="badge badge-primary badge-pill">1</span>
-                    </li>
-                  </ul>
+                    <div class="col-lg-8 align-self-baseline">
+                        <button onclick="getItems()" type="button" class="btn btn-secondary">Get Spells</button>
+                    </div>
+                  <ul class="spellList list-group"></ul>
                 </div>
               </div>
 
@@ -95,7 +85,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjWYTdkEXUmKuyNt2J9tMY8lI6uLQLQFM&callback=initMap&libraries=&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&callback=initMap&libraries=&v=weekly"
         defer
       ></script>
         <!-- Core theme JS-->
