@@ -43,7 +43,6 @@
   p {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: white;
   }
 
   header.masthead {
@@ -138,3 +137,25 @@
   .about-section {
     color: black;
   }
+
+/* IPAD */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+        .ipad-media {
+            margin-top: 720px;
+        }
+}
+
+/* IPHONE */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+        .about-section{
+            margin-top: 400px;
+        }
+}
