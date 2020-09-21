@@ -1,4 +1,4 @@
-import { hPKey } from './app.js'
+import { hPKey } from './APIKey.js'
 
 let mySpellbook = []
 let counter = 0
