@@ -16,6 +16,12 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="style.css" rel="stylesheet" />
+        <script src="./app.js"></script>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjWYTdkEXUmKuyNt2J9tMY8lI6uLQLQFM&callback=initMap&libraries=&v=weekly"
+        defer
+      ></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -75,7 +81,7 @@
                     <!-- map container -->
                     <div class="container jumbotron">
                         <div class="row justify-content-center">
-                                <img src="map-img.jpeg" class="image-fluid" alt="map placeholder image">
+                            <div id="map"></div>
                             </div>
                         </div>
                     </div>
