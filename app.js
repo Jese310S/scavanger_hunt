@@ -103,7 +103,7 @@ function getItems() {
  
         spell_List.innerHTML = test
         spell_desc.innerHTML = test2
-        spell_loc.innerHTML = test3 //back up plan
+        // spell_loc.innerHTML = test3 //back up plan
 
 
         var iconBase =
