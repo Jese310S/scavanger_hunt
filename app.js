@@ -11,7 +11,7 @@ function getItems() {
 
     let elem = document.getElementById('rem').innerHTML;
     // elem == "" ? console.log(elem) : elem.parentNode.removeChild(elem);;
-     console.log(elem)
+    //  console.log(elem)
     // // elem.style.display = 'none';
     // elem.parentNode.removeChild(elem);
 
@@ -74,36 +74,36 @@ function getItems() {
         </li>
         `).join("")
 
-        // map function to randomise locations to spellbook list
-        let locationArr =["State Library", "Chinatown", "Marvel Stadium", "Queen Victoria Market", "St.Pauls Cathedral", "Ice Bar", "Sea Aquarium", "ACMI", "Federation Square", "Flagstaff Gardens"]
-        let shuffledArr = function shuffle(arra1) {
-            var ctr = arra1.length, temp, index;
-            while (ctr > 0) {
-                index = Math.floor(Math.random() * ctr);
-                ctr--;
-               // swap the last element 
-                temp = arra1[ctr];
-                arra1[ctr] = arra1[index];
-                arra1[index] = temp;
-            }
-            return arra1;
-        } 
-console.log(shuffledArr(locationArr))
+        // map function to randomise locations to spellbook list (back up plan)
+//         let locationArr =["State Library", "Chinatown", "Marvel Stadium", "Queen Victoria Market", "St.Pauls Cathedral", "Ice Bar", "Sea Aquarium", "ACMI", "Federation Square", "Flagstaff Gardens"]
+//         let shuffledArr = function shuffle(arra1) {
+//             var ctr = arra1.length, temp, index;
+//             while (ctr > 0) {
+//                 index = Math.floor(Math.random() * ctr);
+//                 ctr--;
+//                // swap the last element 
+//                 temp = arra1[ctr];
+//                 arra1[ctr] = arra1[index];
+//                 arra1[index] = temp;
+//             }
+//             return arra1;
+//         } 
+// console.log(shuffledArr(locationArr))
         
-        //adds locations to spellbook List
-        let test3 = shuffledArr(locationArr).map((x, i) => 
-            `<li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
-            ${x}
-            </li>
-            `).join("")
+        //adds locations to spellbook List (back up plan)
+        // let test3 = shuffledArr(locationArr).map((x, i) => 
+        //     `<li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
+        //     ${x}
+        //     </li>
+        //     `).join("")
 
         let spell_List = document.getElementsByClassName("spellList")[0];
         let spell_desc = document.getElementsByClassName("spellDesc")[0];
-        let spell_loc = document.getElementsByClassName("spellLoc")[0]
+        // let spell_loc = document.getElementsByClassName("spellLoc")[0]   // back up plan
  
         spell_List.innerHTML = test
         spell_desc.innerHTML = test2
-        spell_loc.innerHTML = test3
+        spell_loc.innerHTML = test3 //back up plan
 
 
         var iconBase =
