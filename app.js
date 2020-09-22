@@ -5,7 +5,7 @@ let spellDesc = []
 let counter = 0
 let num = 10
 let randNum = 0
-const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
+const hPKey = 
 
 function getItems() {
 
@@ -38,7 +38,7 @@ function getItems() {
                 console.log(mySpellbook)
                 console.log(spellDesc)
 
-                // prevents infinte loops, via data entry
+                // prevents infinte loops
                 if (num > 20 || num * counter > 151) {
                     console.log("bad luck!")
                     break;
