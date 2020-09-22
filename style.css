@@ -152,7 +152,10 @@
 
   .card-body {
       display: flex;
-      background-color: white;
+  }
+
+  .spell-container {
+      display: flex;
   }
 
 

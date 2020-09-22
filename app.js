@@ -8,6 +8,7 @@ let randNum = 0
 const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
 
 function getItems() {
+    document.getElementById("card-bkg").style.backgroundColor = "white";
 
     let elem = document.getElementById('rem').innerHTML;
     // elem == "" ? console.log(elem) : elem.parentNode.removeChild(elem);;
