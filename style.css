@@ -18,6 +18,23 @@
     justify-content: space-between;
   }
 
+  .btn-2 {
+      background: url("swear.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: cover;
+      margin-right: auto;
+      margin-left: auto;
+      opacity: 1.5;
+      width: 150px;
+      height: 150px;
+  }
+
+  .btn-div {
+    margin-right: auto;
+    margin-left: auto;
+  }
   body {
     margin: 0;
     font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -26,8 +43,8 @@
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("background-2.jpg");
+    background-color:#8B0000 ;
+    background:  url("background-2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -120,22 +137,44 @@
 
   /* spellList */
 
-  .card {
-    width: 50%;
+  .card-1 {
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+    display: flex;
+    border: none;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    border-radius: .25rem;
   }
 
+  .card-body {
+      display: flex;
+  }
+
+  .spell-container {
+      display: flex;
+  }
+
+
   .btn {
-      background-color: #FFD700;
+      background-color: #DAA520;
       padding: 15px;
       color:black;
       font-weight: bold;
+
   }
 
   .about-section {
     color: black;
+    margin-bottom: 31px;
+  }
+
+  li {
+    min-width: max-content;
+    width: 304px;
   }
 
 /* IPAD */
@@ -159,3 +198,4 @@
             margin-top: 400px;
         }
 }
+

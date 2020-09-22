@@ -9,6 +9,12 @@ const hPKey =
 
 function getItems() {
 
+    let elem = document.getElementById('rem').innerHTML;
+    // elem == "" ? console.log(elem) : elem.parentNode.removeChild(elem);;
+    //  console.log(elem)
+    // // elem.style.display = 'none';
+    // elem.parentNode.removeChild(elem);
+
     function randomNumber () {
         let suitableNumber = Math.floor(Math.random() * 150);
         return suitableNumber;
@@ -33,6 +39,7 @@ function getItems() {
                   console.log("bad luck!")
                   break;
                 }
+
                 randNum = randomNumber()
 
                 // adds a random spell to the list and then checks/removes dupes
@@ -55,25 +62,56 @@ function getItems() {
         mySpellbook = mySpellbook.filter((v, i) => mySpellbook.indexOf(v) === i)
 
         // map function to add each new spell to the spellbook list
-        let test = mySpellbook.map((x, i) => `                    
-        <li onclick="checked(${i})" id=${i} class="list-group-item d-flex justify-content-between align-items-center">
+        let test = mySpellbook.map((x, i) => `
+        <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
         ${x}
-        <span class="badge badge-primary badge-pill">14</span>
         </li>
-        `).join("") // need to add in spell desc from spellDesc
+        `).join("") 
+        
+        // map function to add spell descriptions to spellbook list
+        // let test2 = spellDesc.map((x, i) => `
+        // <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
 
-        let spellList = document.getElementsByClassName("spellList")[0];
+
+        // map function to randomise locations to spellbook list (back up plan)
+//         let locationArr =["State Library", "Chinatown", "Marvel Stadium", "Queen Victoria Market", "St.Pauls Cathedral", "Ice Bar", "Sea Aquarium", "ACMI", "Federation Square", "Flagstaff Gardens"]
+//         let shuffledArr = function shuffle(arra1) {
+//             var ctr = arra1.length, temp, index;
+//             while (ctr > 0) {
+//                 index = Math.floor(Math.random() * ctr);
+//                 ctr--;
+//                // swap the last element 
+//                 temp = arra1[ctr];
+//                 arra1[ctr] = arra1[index];
+//                 arra1[index] = temp;
+//             }
+//             return arra1;
+//         } 
+// console.log(shuffledArr(locationArr))
+        
+        //adds locations to spellbook List (back up plan)
+        // let test3 = shuffledArr(locationArr).map((x, i) => 
+        //     `<li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
+        //     ${x}
+        //     </li>
+        //     `).join("")
+
+        let spell_List = document.getElementsByClassName("spellList")[0];
+        let spell_desc = document.getElementsByClassName("spellDesc")[0];
+        // let spell_loc = document.getElementsByClassName("spellLoc")[0]   // back up plan
+ 
+        spell_List.innerHTML = test
+        spell_desc.innerHTML = test2
+        // spell_loc.innerHTML = test3 //back up plan
+
         console.log(spellList)
         // const spellList = document.querySelector('.spellList').innerHTML
         // spellList.innerHTML = `<li>${mySpellbook[counter]}</li>`
-        spellList.innerHTML = test
-
 
         var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
         var img = document.createElement("img");
         img.src = "./bolt-3.png"
-  
   
         var icons = {
             HP_map: {
@@ -140,29 +178,29 @@ function getItems() {
 
 function checked(spell) {
     document.getElementById(spell).style.background = "#3CB371"
-    console.log(spell)
+    // console.log(spell)
 }
 
-// function generateOptions(data) {
-//      console.log(data)
-//      const options = data.map(item =>
-//      `
-//      <li>${item.spell}</li>
-//      `).join('');
-//      spellList.innerHTML = options;
-// }
+// // function generateOptions(data) {
+// //      console.log(data)
+// //      const options = data.map(item =>
+// //      `
+// //      <li>${item.spell}</li>
+// //      `).join('');
+// //      spellList.innerHTML = options;
+// // }
 
-//---------------------------------
-//FUNCTIONS FOR MAP API
-//--------------------------------
-// let map;
+// //---------------------------------
+// //FUNCTIONS FOR MAP API
+// //--------------------------------
+// // let map;
 
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map-container-google-1"), {
-//     center: { lat: -37.814, lng: 144.964 },
-//     zoom: 8
-//   });
-// }
+// // function initMap() {
+// //   map = new google.maps.Map(document.getElementById("map-container-google-1"), {
+// //     center: { lat: -37.814, lng: 144.964 },
+// //     zoom: 8
+// //   });
+// // }
 
 let map;
 function initMap() {
