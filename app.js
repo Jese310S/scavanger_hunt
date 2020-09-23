@@ -7,7 +7,7 @@ let num = 10
 let randNum = 0
 let numbersArray = []
 
-const hPKey = 
+const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
 
 function randomNumber (random) {
   let suitableNumber = Math.floor(Math.random() * random);
@@ -24,12 +24,16 @@ function myFunction() {
     console.log(option);
     if (option === "1"){
         document.getElementById("card-bkg").style.backgroundColor = "#EBD70A";
+        document.getElementById("card-bkg").style.border = "10px solid black"
     } else if (option === "2") {
         document.getElementById("card-bkg").style.backgroundColor = "#4B0606";
+        document.getElementById("card-bkg").style.border = "10px solid #ECB91A"
     }else if(option === "3") {
         document.getElementById("card-bkg").style.backgroundColor = "#0A2F48";
+        document.getElementById("card-bkg").style.border = "10px solid #A17750"
     }else if(option ==="4") {
         document.getElementById("card-bkg").style.backgroundColor = "#23561F";
+        document.getElementById("card-bkg").style.border = "10px solid #999491"
     }else{
         console.log("not working")
     }
@@ -42,9 +46,7 @@ function getItems() {
     let elem = document.getElementById('rem').innerHTML;
      elem == "" ? console.log(elem) : location.reload();
 
-    //  console.log(elem)
-    // // elem.style.display = 'none';
-    // elem.parentNode.removeChild(elem);
+ 
 
     // get request, url and key
     axios({
@@ -53,7 +55,7 @@ function getItems() {
     })
         .then(function (response){
             // hard coded information from API
-            // console.log(response.data[0])
+
             // adds new spells to the spellbook
             counter += 1
             console.log(counter)
@@ -104,41 +106,7 @@ function getItems() {
 
 
 
-        // map function to randomise locations to spellbook list (back up plan)
-//         let locationArr =["State Library", "Chinatown", "Marvel Stadium", "Queen Victoria Market", "St.Pauls Cathedral", "Ice Bar", "Sea Aquarium", "ACMI", "Federation Square", "Flagstaff Gardens"]
-//         let shuffledArr = function shuffle(arra1) {
-//             var ctr = arra1.length, temp, index;
-//             while (ctr > 0) {
-//                 index = Math.floor(Math.random() * ctr);
-//                 ctr--;
-//                // swap the last element 
-//                 temp = arra1[ctr];
-//                 arra1[ctr] = arra1[index];
-//                 arra1[index] = temp;
-//             }
-//             return arra1;
-//         } 
-// console.log(shuffledArr(locationArr))
-        
-        //adds locations to spellbook List (back up plan)
-        // let test3 = shuffledArr(locationArr).map((x, i) => 
-        //     `<li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
-        //     ${x}
-        //     </li>
-        //     `).join("")
-
-        let spell_List = document.getElementsByClassName("spellList")[0];
-        let spell_desc = document.getElementsByClassName("spellDesc")[0];
-        // let spell_loc = document.getElementsByClassName("spellLoc")[0]   // back up plan
- 
-        spell_List.innerHTML = test
-        spell_desc.innerHTML = test2
-        // spell_loc.innerHTML = test3 //back up plan
-
-
-        // console.log(spellList)
-        // const spellList = document.querySelector('.spellList').innerHTML
-        // spellList.innerHTML = `<li>${mySpellbook[counter]}</li>`
+       
 
         var iconBase =
         'https://developers.google.com/maps/documentation/javascript/examples/full/images/';
@@ -240,26 +208,7 @@ function checked(spell) {
     // console.log(spell)
 }
 
-// // function generateOptions(data) {
-// //      console.log(data)
-// //      const options = data.map(item =>
-// //      `
-// //      <li>${item.spell}</li>
-// //      `).join('');
-// //      spellList.innerHTML = options;
-// // }
 
-// //---------------------------------
-// //FUNCTIONS FOR MAP API
-// //--------------------------------
-// // let map;
-
-// // function initMap() {
-// //   map = new google.maps.Map(document.getElementById("map-container-google-1"), {
-// //     center: { lat: -37.814, lng: 144.964 },
-// //     zoom: 8
-// //   });
-// // }
 
 let map;
 function initMap() {
