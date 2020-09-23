@@ -6,12 +6,14 @@ let counter = 0
 let num = 10
 let randNum = 0
 let numbersArray = []
-const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
+
+const hPKey = 
 
 function randomNumber (random) {
   let suitableNumber = Math.floor(Math.random() * random);
   return suitableNumber;
 }
+
 
 
 function myFunction() {
@@ -39,6 +41,7 @@ function getItems() {
 
     let elem = document.getElementById('rem').innerHTML;
      elem == "" ? console.log(elem) : location.reload();
+
     //  console.log(elem)
     // // elem.style.display = 'none';
     // elem.parentNode.removeChild(elem);
@@ -92,11 +95,13 @@ function getItems() {
         `).join("") 
         
         // map function to add spell descriptions to spellbook list
+
         let test2 = spellDesc.map((x, i) => `
         <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
         ${x}
         </li>
         `).join("") 
+
 
 
         // map function to randomise locations to spellbook list (back up plan)
@@ -129,6 +134,7 @@ function getItems() {
         spell_List.innerHTML = test
         spell_desc.innerHTML = test2
         // spell_loc.innerHTML = test3 //back up plan
+
 
         // console.log(spellList)
         // const spellList = document.querySelector('.spellList').innerHTML
@@ -260,4 +266,6 @@ function initMap() {
   map = new google.maps.Map(
       document.getElementById('map-container-google-1'),
       {center: new google.maps.LatLng(-37.814, 144.964), zoom: 15});
+
 }
+
