@@ -6,6 +6,7 @@ let counter = 0
 let num = 10
 let randNum = 0
 let numbersArray = []
+
 const hPKey = 
 
 function randomNumber (random) {
@@ -13,10 +14,34 @@ function randomNumber (random) {
   return suitableNumber;
 }
 
+
+
+function myFunction() {
+
+    
+    let select = document.getElementById('mySelect');
+    let option = select.options[select.selectedIndex].value;
+    console.log(option);
+    if (option === "1"){
+        document.getElementById("card-bkg").style.backgroundColor = "#EBD70A";
+    } else if (option === "2") {
+        document.getElementById("card-bkg").style.backgroundColor = "#4B0606";
+    }else if(option === "3") {
+        document.getElementById("card-bkg").style.backgroundColor = "#0A2F48";
+    }else if(option ==="4") {
+        document.getElementById("card-bkg").style.backgroundColor = "#23561F";
+    }else{
+        console.log("not working")
+    }
+};
+
+
+
 function getItems() {
 
     let elem = document.getElementById('rem').innerHTML;
-    // elem == "" ? console.log(elem) : elem.parentNode.removeChild(elem);;
+     elem == "" ? console.log(elem) : location.reload();
+
     //  console.log(elem)
     // // elem.style.display = 'none';
     // elem.parentNode.removeChild(elem);
@@ -70,8 +95,13 @@ function getItems() {
         `).join("") 
         
         // map function to add spell descriptions to spellbook list
-        // let test2 = spellDesc.map((x, i) => `
-        // <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">`
+
+        let test2 = spellDesc.map((x, i) => `
+        <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
+        ${x}
+        </li>
+        `).join("") 
+
 
 
         // map function to randomise locations to spellbook list (back up plan)
@@ -98,12 +128,13 @@ function getItems() {
         //     `).join("")
 
         let spell_List = document.getElementsByClassName("spellList")[0];
-        // let spell_desc = document.getElementsByClassName("spellDesc")[0];
+        let spell_desc = document.getElementsByClassName("spellDesc")[0];
         // let spell_loc = document.getElementsByClassName("spellLoc")[0]   // back up plan
  
         spell_List.innerHTML = test
-        // spell_desc.innerHTML = test2
+        spell_desc.innerHTML = test2
         // spell_loc.innerHTML = test3 //back up plan
+
 
         // console.log(spellList)
         // const spellList = document.querySelector('.spellList').innerHTML
@@ -179,26 +210,24 @@ function getItems() {
       
         // Create markers.
 
-        let markers = []
-
-        let contentString = ""
+        let contentString = []
   
         for (var i = 0; i < 10; i++) {
   
-          contentString = `${mySpellbook[i]}`
+          contentString.push(`${mySpellbook[i]}`)
           
-          infoWindow = new google.maps.InfoWindow({
-            content: contentString
+          let infoWindow = new google.maps.InfoWindow({
+            content: contentString[i]
           })
       
-          markers[i] = new google.maps.Marker({
+          let marker = new google.maps.Marker({
             position: features[numbersArray[i]].position,
             icon: icons[features[numbersArray[i]].type].icon,
             map: map,
             title: `${mySpellbook[i]}`
           });
-           markers[i].addListener('click', function(){
-            infoWindow.open(map, markers[i])
+           marker.addListener('click', function(){
+            infoWindow.open(map, marker)
           })
         };
     })
@@ -235,4 +264,5 @@ function initMap() {
   map = new google.maps.Map(
       document.getElementById('map-container-google-1'),
       {center: new google.maps.LatLng(-37.814, 144.964), zoom: 15});
+
 }
