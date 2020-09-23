@@ -16,7 +16,7 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="style.css" rel="stylesheet" />
-        <script src="./app.js"></script>
+        <!-- <script src="./app.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
    
       <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -37,6 +37,27 @@
             </div>
         </nav>
         <!-- Masthead-->
+
+        <!-- <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Choose your House
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a value="hufflepuff" class="dropdown-item hufflepuff" href="#"> Hufflepuff </a>
+              <a value="gryffindor" class="dropdown-item gryffindor" href="#"> Gryffindor </a>
+              <a value="ravenclaw" class="dropdown-item ravenclaw" href="#"> Ravenclaw </a>
+              <a value="slytherin" class="dropdown-item slytherin" href="#"> Slytherin </a>
+            </div>
+          </div> -->
+
+          <select id="mySelect" onchange="myFunction()">
+            <option value="0" class="original" selected="selected">Choose your house</option>
+            <option value="1" class="hufflepuff" > Hufflepuff</option>
+            <option value="2" class="gryffindor" >Gryffindor</option>
+            <option value="3" class="ravenclaw"  >Ravenclaw</option>
+            <option value="4" class="slytherin"  >Slytherin</option>
+            
+        </select>
         
         <header class="masthead">
             <!-- SpellList -->
@@ -99,5 +120,6 @@
         </script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="./app.js"></script>
     </body>
 </html>

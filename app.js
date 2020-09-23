@@ -7,11 +7,33 @@ let num = 10
 let randNum = 0
 const hPKey = "$2a$10$HK7x9nK6Y8AE7.d1SlMx..sOQ3Id0cXF/3L70MkgeBLYZ.sFuFuC6"
 
+
+function myFunction() {
+
+    
+    let select = document.getElementById('mySelect');
+    let option = select.options[select.selectedIndex].value;
+    console.log(option);
+    if (option === "1"){
+        document.getElementById("card-bkg").style.backgroundColor = "#EBD70A";
+    } else if (option === "2") {
+        document.getElementById("card-bkg").style.backgroundColor = "#4B0606";
+    }else if(option === "3") {
+        document.getElementById("card-bkg").style.backgroundColor = "#0A2F48";
+    }else if(option ==="4") {
+        document.getElementById("card-bkg").style.backgroundColor = "#23561F";
+    }else{
+        console.log("not working")
+    }
+};
+
+
+
 function getItems() {
-    document.getElementById("card-bkg").style.backgroundColor = "white";
+
 
     let elem = document.getElementById('rem').innerHTML;
-    // elem == "" ? console.log(elem) : elem.parentNode.removeChild(elem);;
+     elem == "" ? console.log(elem) : location.reload();
     //  console.log(elem)
     // // elem.style.display = 'none';
     // elem.parentNode.removeChild(elem);
@@ -212,6 +234,24 @@ function initMap() {
   map = new google.maps.Map(
       document.getElementById('map-container-google-1'),
       {center: new google.maps.LatLng(-37.814, 144.964), zoom: 16});
+
+
+
+
+
+//dropdown function----------------
+// var select = document.getElementById('select')
+// var option = select.value;
+// console.log(option)
+
+// function myFunction() {
+//     let select = document.getElementById('select')
+//     let option = select.value;
+//     console.log(option);
+//     if (option === "hufflepuff"){
+//         document.getElementById("card-bkg").style.backgroundColor = "#EBD70A";
+//     }
+// }
 
 //   var iconBase =
 //       'https://developers.google.com/maps/documentation/javascript/examples/full/images/';

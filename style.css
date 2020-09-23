@@ -199,3 +199,24 @@
         }
 }
 
+
+/* House dropdown menu */
+
+.gryffindor {
+    background-color: #4B0606;
+    color: #ECB91A;
+}
+
+.hufflepuff {
+    background-color: #EBD70A;
+}
+
+.ravenclaw {
+    background-color: #0A2F48;
+    color: #A17750;
+}
+
+.slytherin {
+    background-color: #23561F;
+    color: #999491;
+}
