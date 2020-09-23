@@ -5,7 +5,13 @@ let spellDesc = []
 let counter = 0
 let num = 10
 let randNum = 0
+let numbersArray = []
 const hPKey = 
+
+function randomNumber (random) {
+  let suitableNumber = Math.floor(Math.random() * random);
+  return suitableNumber;
+}
 
 function getItems() {
 
@@ -14,11 +20,6 @@ function getItems() {
     //  console.log(elem)
     // // elem.style.display = 'none';
     // elem.parentNode.removeChild(elem);
-
-    function randomNumber () {
-        let suitableNumber = Math.floor(Math.random() * 150);
-        return suitableNumber;
-    }
 
     // get request, url and key
     axios({
@@ -34,13 +35,13 @@ function getItems() {
 
             for (i = 0; i < num; i++) {
 
-                // prevents infinte loops and extension of spell list temp fix
-                if (num > 20 || num * counter > 151 || mySpellbook.length > 9) {
+                // prevents infinte loops
+                if (num > 20 || num * counter > 151) {
                   console.log("bad luck!")
                   break;
                 }
 
-                randNum = randomNumber()
+                randNum = randomNumber(150)
 
                 // adds a random spell to the list and then checks/removes dupes
                 mySpellbook.push(response.data[randNum].spell)
@@ -70,7 +71,7 @@ function getItems() {
         
         // map function to add spell descriptions to spellbook list
         // let test2 = spellDesc.map((x, i) => `
-        // <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">
+        // <li onclick="checked(${i})" id=${i} rem class="list-group-item d-flex justify-content-between align-items-center">`
 
 
         // map function to randomise locations to spellbook list (back up plan)
@@ -97,14 +98,14 @@ function getItems() {
         //     `).join("")
 
         let spell_List = document.getElementsByClassName("spellList")[0];
-        let spell_desc = document.getElementsByClassName("spellDesc")[0];
+        // let spell_desc = document.getElementsByClassName("spellDesc")[0];
         // let spell_loc = document.getElementsByClassName("spellLoc")[0]   // back up plan
  
         spell_List.innerHTML = test
-        spell_desc.innerHTML = test2
+        // spell_desc.innerHTML = test2
         // spell_loc.innerHTML = test3 //back up plan
 
-        console.log(spellList)
+        // console.log(spellList)
         // const spellList = document.querySelector('.spellList').innerHTML
         // spellList.innerHTML = `<li>${mySpellbook[counter]}</li>`
 
@@ -148,30 +149,57 @@ function getItems() {
             position: new google.maps.LatLng(-37.81776, 144.96907),
             type: 'HP_map'
           }, { /* flagstaff */
-            position: new google.maps.LatLng(-33.91666, 151.23468),
+            position: new google.maps.LatLng(-37.812110, 144.955975),
+            type: 'HP_map'
+          }, { /* Chemist Warehouse */
+            position: new google.maps.LatLng(-37.814348, 144.963506),
+            type: 'HP_map'
+          }, { /* Royal Stacks */
+            position: new google.maps.LatLng(-37.817297, 144.958335),
+            type: 'HP_map'
+          }, { /* Higher Ground */
+            position: new google.maps.LatLng(-37.815619, 144.952906),
+            type: 'HP_map'
+          }, { /* Parliment Reserve */
+            position: new google.maps.LatLng(-37.810821, 144.973742),
             type: 'HP_map'
           }
         ];
+
+        for (i = 0; i < features.length; i++) {
+          numbersArray.push(i)
+        }
+
+        function shuffle(o) {
+          for(let j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+          return o;
+        };
+
+        console.log(shuffle(numbersArray))
       
         // Create markers.
+
+        let markers = []
+
+        let contentString = ""
   
-        for (var i = 0; i < features.length; i++) {
+        for (var i = 0; i < 10; i++) {
   
-          // let contentString = `${mySpellbook[i]}`
+          contentString = `${mySpellbook[i]}`
           
-          // infoWindow = new google.maps.InfoWindow({
-          //    content: contentString
-          // })
+          infoWindow = new google.maps.InfoWindow({
+            content: contentString
+          })
       
-          marker = new google.maps.Marker({
-            position: features[i].position,
-            icon: icons[features[i].type].icon,
+          markers[i] = new google.maps.Marker({
+            position: features[numbersArray[i]].position,
+            icon: icons[features[numbersArray[i]].type].icon,
             map: map,
             title: `${mySpellbook[i]}`
           });
-          // marker.addListener('click', function(){
-          //   infoWindow.open(map, marker)
-          // })
+           markers[i].addListener('click', function(){
+            infoWindow.open(map, markers[i])
+          })
         };
     })
 }
@@ -206,5 +234,5 @@ let map;
 function initMap() {
   map = new google.maps.Map(
       document.getElementById('map-container-google-1'),
-      {center: new google.maps.LatLng(-37.814, 144.964), zoom: 16});
+      {center: new google.maps.LatLng(-37.814, 144.964), zoom: 15});
 }
