@@ -152,6 +152,8 @@
 
   .card-body {
       display: flex;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   .spell-container {
@@ -173,8 +175,7 @@
   }
 
   li {
-    min-width: max-content;
-    width: 304px;
+    width: 450px;
   }
 
 /* IPAD */
